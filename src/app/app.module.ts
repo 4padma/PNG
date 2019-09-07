@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatCardModule,
         MatInputModule,
         MatAutocompleteModule,
@@ -55,6 +57,9 @@ import { CommonService } from './shared/common.service';
     SafePipe
   ],
   imports: [
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule,
     BrowserModule,
     AppRoutingModule,
     MatCardModule,

@@ -30,10 +30,10 @@ export class SidebarComponent implements OnInit {
 
   searchStores(){
     this.commonService.setRefreshMap();
-    this.route.navigate(['map']);
+    this.route.navigate(['dashboard/map']);
   }
   goToStore(store){
     console.log(store);
-    this.route.navigate(['products',store.name])
+    this.route.navigate(['dashboard/products',store.name])
   }
 }

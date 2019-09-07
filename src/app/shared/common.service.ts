@@ -8,6 +8,7 @@ import { Subject } from 'rxjs';
 export class CommonService {
     refreshMap = new Subject();
     addToCart=new Subject();
+    url:string;
     setRefreshMap(){
         this.refreshMap.next("refresh");
     }

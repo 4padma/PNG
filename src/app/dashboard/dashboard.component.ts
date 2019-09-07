@@ -13,7 +13,7 @@ export class DashboardComponent implements OnInit {
    }
 
   ngOnInit() {
-    this.router.navigate(['map']);
+    this.router.navigate(['dashboard/map']);
   }
   // search(){
   //   sessionStorage.setItem('store','KFC');

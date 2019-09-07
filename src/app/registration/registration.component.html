@@ -1,1 +1,52 @@
-<p>registration works!</p>
+<mat-card *ngIf="!isRegister">
+    <h4 style="text-align: center;">Register</h4>
+    <form [formGroup]="regiForm">
+        <mat-form-field class="col-md-12 row">
+            <mat-label>First Name</mat-label><input formControlName="FirstName" [(ngModel)]="data.firstName" matInput>
+        </mat-form-field>
+        <mat-form-field class="col-md-12 row">
+            <mat-label class="col-md-6">Last Name</mat-label><input class="col-md-6" formControlName="LastName"
+                [(ngModel)]="data.lastName" matInput>
+        </mat-form-field>
+        <mat-form-field class="col-md-12 row">
+            <mat-label class="col-md-6">User Name</mat-label><input class="col-md-6" formControlName="UserName"
+                [(ngModel)]="data.userName" matInput>
+            <mat-error *ngIf="regiForm.controls.UserName.invalid">User Name required</mat-error>
+        </mat-form-field>
+        <mat-form-field class="col-md-12 row">
+            <mat-label class="col-md-6">Email Id</mat-label>
+            <input class="col-md-6" formControlName="Email" [(ngModel)]="data.email" matInput>
+        </mat-form-field>
+        <!-- <mat-form-field class="col-md-12 row">
+            <mat-label class="col-md-6">Email Id</mat-label>
+            <input class="col-md-6" formControlName="Phone" [(ngModel)]="data.email" matInput>
+        </mat-form-field> -->
+        <mat-form-field class="col-md-12 row">
+            <mat-label class="col-md-6">Password</mat-label>
+            <input class="col-md-6" formControlName="Password" type="password" [(ngModel)]="data.password" matInput>
+            <mat-error *ngIf="regiForm.controls.Password.invalid">Password required</mat-error>
+        </mat-form-field>
+        <p>If already registered,
+            Please <span class="pointer" (click)="isRegister=true">login</span></p>
+        <div class="row"><span class="col-md-3"></span><button class="btn btn-primary" (click)="submitRegForm()">Register</button></div>
+    </form>
+</mat-card>
+<mat-card *ngIf="isRegister">
+    <h4 style="text-align: center;">Login</h4>
+    <form [formGroup]="loginForm">
+        <mat-form-field class="col-md-12 row">
+            <mat-label class="col-md-6">User Name</mat-label><input class="col-md-6" formControlName="UserName"
+                [(ngModel)]="login.userName" matInput>
+            <mat-error *ngIf="loginForm.controls.UserName.invalid">User Name required</mat-error>
+        </mat-form-field>
+        <mat-form-field class="col-md-12 row">
+            <mat-label class="col-md-6">Password</mat-label><input class="col-md-6" formControlName="Password"
+                [(ngModel)]="login.password" matInput type="password">
+            <mat-error *ngIf="loginForm.controls.Password.invalid">Password required</mat-error>
+        </mat-form-field>
+        <p class="col-sm-12">New user?,Please <span class="pointer" (click)="isRegister=false">Register</span></p>
+        <div class="row col-md-12">
+            <span class="col-md-3"></span>
+            <button class="btn btn-primary" (click)="submitLoginForm()">Login</button></div>
+    </form>
+</mat-card>

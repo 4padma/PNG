@@ -7,11 +7,15 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { CartComponent } from './cart/cart.component';
 
 const routes: Routes = [
-  {path:'',component:DashboardComponent},
+  {path:'',component:RegistrationComponent},
   {path:'registration',component:RegistrationComponent},
-  {path:'products/:id',component:ProductsComponent},
-  {path:'dashboard',component:DashboardComponent},
-  {path:'map',component:MapComponent},
+  
+  {path:'dashboard',component:DashboardComponent,
+  children: [
+    {path:'products/:id',component:ProductsComponent},
+    {path:'map',component:MapComponent}
+  ]},
+  
   {path:'cart',component:CartComponent}
 ];
 

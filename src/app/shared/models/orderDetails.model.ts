@@ -1,8 +1,9 @@
+import { Item} from './item.model';
 export class  OrderDetails {
 
       orderId:string;
 
-    itemList:item[];
+    itemList:Item[];
 
      billAmount:number;
 
