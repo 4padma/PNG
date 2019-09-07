@@ -1,0 +1,17 @@
+.example-header-image {
+    background-image: url('../../assets/images/search.png');
+    background-size: cover;
+  }
+  mat-card{
+    -webkit-box-shadow: 3px 3px 5px 6px #ccc;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+    -moz-box-shadow:    3px 3px 5px 6px #ccc;  /* Firefox 3.5 - 3.6 */
+    box-shadow:         3px 3px 5px 6px #ccc;
+    margin-bottom: 10px;
+  }
+  .right-align{
+      float:right;
+  }
+  .quantity{
+      border:1px solid gray;
+      width:40px;
+  }
