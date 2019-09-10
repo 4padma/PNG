@@ -1,17 +1,18 @@
 export class Item {
 
-       item_id  :string; 
+    item_id?: string;
 
-       itemName  :string; 
+    itemName: string;
 
-       itemDesc  :string; 
+    itemDesc?: string;
 
-       price  :string; 
+    price?: string;
 
-       quantity  :string; 
+    quantity?: string;
 
-       storeId  :string; 
+    storeId?: string;
 
+    count?: number;
 
 
 }

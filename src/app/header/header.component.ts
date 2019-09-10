@@ -8,16 +8,21 @@ import { CommonService } from '../shared/common.service';
 })
 export class HeaderComponent implements OnInit {
   value;
-  constructor(private common:CommonService) { }
+  constructor(private common: CommonService) { }
 
   ngOnInit() {
-    this.common.getAddTOCart().subscribe((res)=>{
-      if(res){
-      this.value=res;
-      }else{
-        this.value=0;
+    this.common.setGotoCart(false);
+    this.common.getAddTOCart().subscribe((res) => {
+      if (res) {
+        this.value = res;
+      } else {
+        this.value = 0;
       }
     })
+  }
+
+  showShopCartPage() {
+    this.common.setGotoCart(true);
   }
 
 }
